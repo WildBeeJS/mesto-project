@@ -37,64 +37,13 @@
       </section>
 
       <section class="cards">
-        <ul class="cards__elements">
-          <li class="element">
-            <img src="./images/karachaevsk.jpg" alt="Карачаевск"
-              class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-
-          <li class="element">
-            <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-
-          <li class="element">
-            <img src="./images/dombay.jpg" alt="Домбай" class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-
-          <li class="element">
-            <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-
-          <li class="element">
-            <img src="./images/dombay.jpg" alt="Домбай" class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Домбай</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-
-          <li class="element">
-            <img src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия"
-              class="element__image">
-            <div class="element__description">
-              <h2 class="element__title">Карачаево-Черкессия</h2>
-              <button class="element__like element__like_active" type="button"></button>
-            </div>
-          </li>
-        </ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+  <div id="profile-popup" class="popup">
     <div class="popup__container">
       <button class="popup__close-button" type="button" name="popupCloseButton"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
@@ -105,5 +54,35 @@
       </form>
     </div>
   </div>
+  <div id="cards-popup" class="popup">
+    <div class="popup__container">
+      <button type="button" class="popup__close-button" aria-label="Закрыть форму"></button>
+      <h3 class="popup__title">Новое место</h3>
+      <form class="popup__form" name="mesto">
+          <input type="text" class="popup__input popup__input_name_username" name="mesto-name" required placeholder="Название">
+          <input type="text" class="popup__input popup__input_name_about" name="link-image" required placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__submit-button" aria-label="Создать">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div id="image-popup" class="popup popup_zoom_active">
+    <div class="popup__zoom-container">
+      <button type="button" class="popup__close-button" aria-label="Закрыть"></button>
+      <img src="#" class="popup__image" alt="">
+      <p class="popup__description"></p>
+    </div>
+  </div>
+  <template id="card-template">
+    <div class="cards__item">
+      <button type="button" class="cards__delete" aria-label="Удалить"></button>
+      <img src="#" class="cards__image" alt="">
+      <div class="cards__info">
+        <h2 class="cards__description"></h2>
+        <button type="button" class="cards__like" aria-label="Like"></button>
+      </div>
+    </div>
+  </template>
+  <script src="./scripts/initialCards.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
